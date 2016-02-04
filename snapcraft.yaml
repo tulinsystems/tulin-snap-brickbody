@@ -1,11 +1,18 @@
 name: brickbody
-version: 0.1
+version: 0
 vendor: Daniel Toussaint  <daniel@dmhome.net>
 summary: Service management system for BlinkFish IoT 
 description: This is a collection of Python3 scripts that run under the iPOPO framework. 
 icon: icon.png
+
+binaries: 
+  bricks:
+   exec: usr/bin/brickbody.py
+
 parts: 
  serviceframework:
   plugin: python3
   source: https://dmhome@bitbucket.org/tulinsystems/brickbody.git 
   source-type: git 
+  stage-packages: [libxml2,libxslt1.1]
+
